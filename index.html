@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de la santé</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1><img src="HealthLink.png" alt="Logo HealthLink" width="80" height="90">HealthLink</h1>
+</header>
+
+<div class="title-bar">
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <button class="dropbtn" onclick="toggleDocumentation()">Documentation</button>
+                <div class="dropdown-content" id="maladies-dropdown">
+                    <a href="#">Asthme</a>
+                    <a href="#">Accident vasculaire cérébral</a>
+                    <a href="#">Cancer</a>
+                    <a href="#">Dépression chronique</a>
+                    <a href="#">Diabète</a>
+                    <a href="#">Drépanocytose</a>
+                    <a href="#">Epilepsie</a>
+                    <a href="#">Insuffisance rénale chronique</a>
+                    <a href="#">Hypertension artérielle</a>
+                </div>
+            </li>
+            <li><button onclick="toggleAnalyse()">Analyse</button></li>
+            <li><button>Traitement</button></li>
+            <li><button>Rappels</button></li>
+            <li><button>Aide</button></li>
+            <li><button>À Propos</button></li>
+        </ul>
+    </nav>
+</div>
+
+<div id="documentation" class="section" style="display: none;">
+    <!-- Aucun texte ici -->
+</div>
+
+<section id="analyse" class="section" style="display: none;">
+    <h2>Analyse</h2>
+    <p><strong>Collecte des antécédents médicaux</strong><br>
+    L'utilisateur sera invité à fournir des informations sur ses antécédents médicaux, y compris les maladies préexistantes, les traitements suivis et les éventuelles préoccupations de santé.</p>
+    <button>Faire l'analyse</button>
+
+    <p><strong>Évaluation des symptômes</strong><br>
+    L'application peut proposer des questionnaires ou des listes de symptômes spécifiques à chaque maladie chronique. L'utilisateur devra décrire ses symptômes actuels, leur durée et leur intensité.</p>
+    <button>Faire l'analyse</button>
+
+    <p><strong>Enregistrement des données biométriques</strong><br>
+    L'utilisateur pourra enregistrer ses données biométriques régulières, telles que la pression artérielle, la glycémie ou le rythme cardiaque, en utilisant des dispositifs médicaux connectés ou en les saisissant manuellement.</p>
+    <button>Faire l'analyse</button>
+
+    <p><strong>Analyse des données biométriques</strong><br>
+    L'application analysera les données biométriques enregistrées afin d'identifier d'éventuelles anomalies ou tendances préoccupantes. Des seuils préétablis seront utilisés pour évaluer si les valeurs se situent dans des plages normales ou si elles indiquent un risque de maladie chronique.</p>
+    <button>Faire l'analyse</button>
+
+    <p><strong>Facteurs de risque</strong><br>
+    L'utilisateur sera invité à fournir des informations sur ses facteurs de risque personnels, tels que l'hérédité, le mode de vie (alimentation, activité physique, tabagisme, etc.) et les expositions environnementales.</p>
+    <button>Faire l'analyse</button>
+
+    <p><strong>Analyse des facteurs de risque</strong><br>
+    L'application évaluera les facteurs de risque fournis par l'utilisateur et les comparera aux recommandations médicales pour déterminer le niveau de risque associé à chaque maladie chronique.</p>
+    <button>Faire l'analyse</button>
+
+    <!-- <button>Faire l'analyse</button> -->
+</section>
+
+<div class="centered-message">
+    <h2>Bienvenue sur notre site de gestion de la santé</h2>
+    <p>Obtenez des informations sur les maladies chroniques, analysez vos données de santé, découvrez les traitements adaptés et ne manquez aucun rappel important.</p>
+</div>
+
+<!-- <footer>
+    <p>&copy; 2024 HealthLink</p>
+</footer> -->
+
+<script>
+    function toggleDocumentation() {
+        var documentation = document.getElementById("documentation");
+        var dropdownContent = document.getElementById("maladies-dropdown");
+        var message = document.querySelector(".centered-message");
+        
+        if (documentation.style.display === "none") {
+            documentation.style.display = "block";
+            dropdownContent.style.display = "block";
+            message.style.display = "none";
+        } else {
+            documentation.style.display = "none";
+            dropdownContent.style.display = "none";
+            message.style.display = "block";
+        }
+    }
+
+    function toggleAnalyse() {
+        var analyse = document.getElementById("analyse");
+        var message = document.querySelector(".centered-message");
+
+        if (analyse.style.display === "none") {
+            analyse.style.display = "block";
+            message.style.display = "none";
+        } else {
+            analyse.style.display = "none";
+            message.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
