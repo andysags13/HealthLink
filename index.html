@@ -29,11 +29,11 @@
                     <a href="#">Hypertension artérielle</a>
                 </div>
             </li>
-            <li><button onclick="toggleAnalyse()">Analyse</button></li>
-            <li><button>Traitement</button></li>
-            <li><button>Rappels</button></li>
-            <li><button>Aide</button></li>
-            <li><button>À Propos</button></li>
+            <button onclick="toggleAnalyse()">Analyse</button></li>
+            <button onclick="toggleTraitement()">Traitement</button></li>
+            <button>Rappels</button></li>
+            <button>Aide</button></li>
+            <button>À Propos</button></li>
         </ul>
     </nav>
 </div>
@@ -68,7 +68,50 @@
     L'application évaluera les facteurs de risque fournis par l'utilisateur et les comparera aux recommandations médicales pour déterminer le niveau de risque associé à chaque maladie chronique.</p>
     <button>Faire l'analyse</button>
 
-    <!-- <button>Faire l'analyse</button> -->
+    <p><strong>Recommandations et alertes</strong><br>
+    En fonction des résultats de l'analyse, l'application fournira des recommandations personnalisées à l'utilisateur, telles que des conseils de mode de vie, des tests supplémentaires à envisager ou une consultation médicale recommandée. Des alertes seront également générées en cas de dépassement de seuils critiques ou de symptômes préoccupants.</p>
+    <button>Faire l'analyse</button>
+</section>
+
+<section id="traitement" class="section" style="display: none;">
+    <h2>Traitement</h2>
+    <p><strong>Suivez les recommandations médicales</strong><br>
+    Consultez régulièrement votre professionnel de santé et suivez ses recommandations concernant les médicaments, les traitements et les examens de suivi. Assurez-vous de comprendre les instructions médicales et posez des questions en cas de doute.</p>
+
+    <p><strong>Adoptez un mode de vie sain</strong><br>
+    Une alimentation équilibrée, riche en fruits, légumes, grains entiers et sources de protéines maigres, peut contribuer à améliorer votre état de santé. Limitez la consommation d'aliments transformés, de sel, de sucre ajouté et de graisses saturées. Faites de l'exercice régulièrement selon les recommandations de votre professionnel de santé. Évitez les comportements à risque tels que le tabagisme et la consommation excessive d'alcool.</p>
+
+    <p><strong>Gérez le stress</strong><br>
+    Le stress peut avoir un impact négatif sur la santé. Trouvez des stratégies de gestion du stress qui fonctionnent pour vous, comme la méditation, le yoga, la respiration profonde, la pratique d'activités qui vous plaisent ou la recherche de soutien auprès de proches ou de groupes de soutien.</p>
+
+    <p><strong>Établissez une routine de sommeil saine</strong><br>
+    Un sommeil adéquat est essentiel pour maintenir un bon état de santé. Essayez de vous coucher et de vous réveiller à des heures régulières, créez un environnement propice au sommeil (chambre calme, sombre et confortable) et évitez les stimulants tels que la caféine avant le coucher.</p>
+
+    <p><strong>Informez-vous et soyez acteur de votre santé</strong><br>
+    Apprenez autant que possible sur votre maladie chronique, ses symptômes, son traitement et les signes d'alerte. Soyez vigilant quant à votre état de santé et signalez tout changement ou symptôme inhabituel à votre professionnel de santé. Impliquez-vous dans la gestion de votre maladie en posant des questions, en prenant des décisions éclairées et en cherchant un soutien si nécessaire.</p>
+
+    <p><strong>Établissez un réseau de soutien</strong><br>
+    Entourez-vous de proches et de personnes qui comprennent votre situation et peuvent vous apporter un soutien émotionnel. Rejoignez des groupes de soutien ou des associations de patients pour partager vos expériences et obtenir des conseils pratiques.</p>
+
+    <p><strong>Prenez soin de votre bien-être émotionnel</strong><br>
+    Les maladies chroniques peuvent avoir un impact sur votre bien-être émotionnel. N'hésitez pas à demander l'aide d'un professionnel de la santé mentale si vous ressentez de l'anxiété, de la dépression ou d'autres difficultés émotionnelles. Prenez le temps de vous détendre, de vous engager dans des activités qui vous plaisent et de cultiver des relations positives dans votre vie.</p>
+
+    <p>Il est important de noter que ces conseils sont généraux et peuvent varier en fonction de la maladie chronique spécifique et des recommandations médicales individuelles. Consultez toujours votre professionnel de santé pour obtenir des conseils adaptés à votre situation personnelle.</p>
+</section>
+
+<section id="rappels" class="section" style="display: none;">
+    <h2>Rappels</h2>
+    <p><strong>Rendez-vous médicaux</strong><br>
+    Planifiez et respectez vos rendez-vous médicaux avec votre professionnel de santé pour un suivi régulier de votre état de santé.</p>
+    <button>Faire le Rappel</button>
+
+<p><strong>Prise de médicaments</strong><br>
+    Prenez vos médicaments selon les instructions de votre médecin. Assurez-vous de suivre correctement les doses et les horaires prescrits.</p>
+    <button>Faire le Rappel</button>
+
+    <p><strong>Déjeuner, petit déjeuner, déjeuner, dîner</strong><br>
+    Veillez à maintenir une alimentation équilibrée en prenant vos repas à des heures régulières. Ne sautez pas de repas et évitez les excès.</p>
+    <button>Faire le Rappel</button>
 </section>
 
 <div class="centered-message">
@@ -106,6 +149,32 @@
             message.style.display = "none";
         } else {
             analyse.style.display = "none";
+            message.style.display = "block";
+        }
+    }
+
+    function toggleTraitement() {
+        var traitement = document.getElementById("traitement");
+        var message = document.querySelector(".centered-message");
+
+        if (traitement.style.display === "none") {
+            traitement.style.display = "block";
+            message.style.display = "none";
+        } else {
+            traitement.style.display = "none";
+            message.style.display = "block";
+        }
+    }
+
+    function toggleRappels() {
+        var rappels = document.getElementById("rappels");
+        var message = document.querySelector(".centered-message");
+
+        if (rappels.style.display === "none") {
+            rappels.style.display = "block";
+            message.style.display = "none";
+        } else {
+            rappels.style.display = "none";
             message.style.display = "block";
         }
     }

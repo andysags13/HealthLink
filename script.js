@@ -18,7 +18,7 @@ function toggleAnalyse() {
     var analyse = document.getElementById("analyse");
     var message = document.querySelector(".centered-message");
 
-    if (window.getComputedStyle(analyse).display === "none") {
+    if (analyse.style.display === "none") {
         analyse.style.display = "block";
         message.style.display = "none";
     } else {
