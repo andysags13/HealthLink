@@ -6,24 +6,24 @@ body {
 }
 
 /* Style de la barre de titre */
-.title-bar {
+header {
+    display: flex;
+    align-items: center; /* Aligner les éléments enfants verticalement */
     background-color: #1297d4;
-    overflow: hidden;
+    overflow: auto;
+    height: 90px;
+    position: relative;
 }
 
-h1 {
+header h1 {
+    margin: 0; /* Supprimez la marge ajoutée par défaut */
     font-style: italic;
     font-size: 24px;
-    margin: 10px;
     font-family: Arial, sans-serif;
 }
 
-.title-bar a {
-    display: inline-block;
-    color: rgb(250, 250, 250);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+header img {
+    margin-right: 10px; /* Espacement entre le logo et le texte */
 }
 
 .title-bar a:hover {
@@ -57,8 +57,34 @@ header h1 {
 
 /* Style du message centré */
 .centered-message {
+    position: relative;
     text-align: center;
-    margin-top: 50px;
+    color: rgb(0, 162, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    height: 100vh; /* Hauteur de la vue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.welcome-text {
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+.welcome-text:hover {
+    transform: scale(1.1);
+    color: #ff833b; /* Changez la couleur du texte au survol */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Accentuez l'ombre du texte */
 }
 
 /* Style du footer */
@@ -117,15 +143,75 @@ button {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #005a29;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
-  }
-  
-  button:active {
+}
+
+button:active {
     transform: translateY(-1px);
-  }
+}
+
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Couleur de fond de la page */
+}
+
+/* Style de la page de connexion */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hauteur de la vue */
+    background-color: #1297d4; /* Couleur de fond du conteneur de connexion */
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1297d4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #005a29;
+}
+

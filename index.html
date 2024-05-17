@@ -8,32 +8,30 @@
 </head>
 <body>
 
+
 <header>
     <h1><img src="HealthLink.png" alt="Logo HealthLink" width="80" height="90">HealthLink</h1>
 </header>
 
-<div class="title-bar">
+<div class="title-bar">*
     <nav>
         <ul>
             <li class="dropdown">
-                <button class="dropbtn" onclick="toggleDocumentation()">Documentation</button>
+                <button class="dropbtn" onclick="toggleDocumentation()">Documentation ▼</button>
                 <div class="dropdown-content" id="maladies-dropdown">
-                    <a href="#">Asthme</a>
-                    <a href="#">Accident vasculaire cérébral</a>
-                    <a href="#">Cancer</a>
-                    <a href="#">Dépression chronique</a>
-                    <a href="#">Diabète</a>
-                    <a href="#">Drépanocytose</a>
-                    <a href="#">Epilepsie</a>
-                    <a href="#">Insuffisance rénale chronique</a>
-                    <a href="#">Hypertension artérielle</a>
+                    <a href="asthme.html">Asthme</a>
+                    <a href="cancer.html">Cancer</a>
+                    <a href="hypertension.html">Hypertension artérielle</a>
+                    <a href="depression.html">Dépression chronique</a>
+                    <a href="diabete.html">Diabète</a>
+                    <a href="insuffisance_renale.html">Insuffisance rénale chronique</a>
+                    <a href="epilepsie.html">Epilepsie</a>
+                    <a href="drepanocytose.html">Drépanocytose</a>
                 </div>
             </li>
-            <button onclick="toggleAnalyse()">Analyse</button></li>
-            <button onclick="toggleTraitement()">Traitement</button></li>
-            <button>Rappels</button></li>
-            <button>Aide</button></li>
-            <button>À Propos</button></li>
+            <button onclick="toggleSection('analyse')">Analyse</button></li>
+            <button onclick="toggleSection('traitement')">Traitement</button></li>
+            <button onclick="toggleSection('rappels')">Rappels</button></li>
         </ul>
     </nav>
 </div>
@@ -114,9 +112,13 @@
     <button>Faire le Rappel</button>
 </section>
 
+
 <div class="centered-message">
-    <h2>Bienvenue sur notre site de gestion de la santé</h2>
-    <p>Obtenez des informations sur les maladies chroniques, analysez vos données de santé, découvrez les traitements adaptés et ne manquez aucun rappel important.</p>
+    <img src="images.jpeg" alt="Health Image" class="center-image">
+    <div class="welcome-text">
+        <h2>Bienvenue sur notre site de gestion de la santé</h2>
+        <p>Obtenez des informations sur les maladies chroniques, analysez vos données de santé, découvrez les traitements adaptés et ne manquez aucun rappel important.</p>
+    </div>
 </div>
 
 <!-- <footer>
@@ -140,43 +142,19 @@
         }
     }
 
-    function toggleAnalyse() {
-        var analyse = document.getElementById("analyse");
+    function toggleSection(sectionId) {
+        var sections = document.getElementsByClassName("section");
         var message = document.querySelector(".centered-message");
-
-        if (analyse.style.display === "none") {
-            analyse.style.display = "block";
-            message.style.display = "none";
-        } else {
-            analyse.style.display = "none";
-            message.style.display = "block";
+        
+        for (var i = 0; i < sections.length; i++) {
+            if (sections[i].id === sectionId) {
+                sections[i].style.display = "block";
+            } else {
+                sections[i].style.display = "none";
+            }
         }
-    }
-
-    function toggleTraitement() {
-        var traitement = document.getElementById("traitement");
-        var message = document.querySelector(".centered-message");
-
-        if (traitement.style.display === "none") {
-            traitement.style.display = "block";
-            message.style.display = "none";
-        } else {
-            traitement.style.display = "none";
-            message.style.display = "block";
-        }
-    }
-
-    function toggleRappels() {
-        var rappels = document.getElementById("rappels");
-        var message = document.querySelector(".centered-message");
-
-        if (rappels.style.display === "none") {
-            rappels.style.display = "block";
-            message.style.display = "none";
-        } else {
-            rappels.style.display = "none";
-            message.style.display = "block";
-        }
+        
+        message.style.display = "none";
     }
 </script>
 
