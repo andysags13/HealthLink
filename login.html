@@ -10,21 +10,18 @@
 
 <div class="login-container">
     <div class="login-form">
-        <h2>Connexion</h2>
+        <h2>Connexion ou inscription</h2>
         <form action="index.html" method="post">
             <div class="form-control">
-                <input type="text" id="username" name="username" required>
-                <label>
-                    <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
-                </label>
+                <input type="text" id="username" name="username" placeholder="Numéro de téléphone" required>
             </div>
             <div class="form-control">
-                <input type="password" id="password" name="password" required>
-                <label>
-                    <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
-                </label>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
             </div>
-            <button type="submit">Se connecter</button>
+            <div class="form-control">
+                <input type="text" id="name" name="name" placeholder="Nom (pour l'inscription)">
+            </div>
+            <button type="submit">Se connecter / S'inscrire</button>
         </form>
     </div>
 </div>
