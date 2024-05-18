@@ -26,3 +26,12 @@ function toggleAnalyse() {
         message.style.display = "block";
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const notificationButton = document.querySelector('.notification-button');
+    const notificationDropdown = document.querySelector('.notification-dropdown');
+
+    notificationButton.addEventListener('click', function() {
+        notificationDropdown.classList.toggle('active');
+    });
+});
